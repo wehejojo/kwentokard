@@ -3,7 +3,7 @@ name: Deploy to Firebase Hosting
 on:
   push:
     branches:
-      - main
+      - main  # change if your default branch is different
 
 jobs:
   deploy:
@@ -28,6 +28,6 @@ jobs:
         shell: bash
 
       - name: Deploy to Firebase Hosting
-        run: firebase deploy --project kwentokard
         env:
           GOOGLE_APPLICATION_CREDENTIALS: $HOME/firebase-key.json
+        run: firebase deploy --project kwentokard
