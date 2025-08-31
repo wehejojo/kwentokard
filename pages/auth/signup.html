@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Kwento Kard</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+    :root {
+      --black: #0D0C1D;
+      --gold: #D4AF37;
+      --white: #F8F9FA;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--black);
+      font-family: "Inter", sans-serif;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) skew(-10deg, -3deg);
+      opacity: 0.08;
+      z-index: 0;
+    }
+
+    .background img {
+      height: 80vh;
+      width: auto;
+      filter: brightness(50%) blur(2px);
+    }
+
+    main {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .home-link {
+      text-decoration: none;
+      color: var(--gold);
+    }
+
+    .home-link:hover {
+      text-decoration: underline;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+
+    .login-container h1 {
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .form-group input {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .form-group input:focus {
+      outline: 2px solid var(--gold);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .btn-gold:hover {
+      background: #e0c96d;
+    }
+
+    .btn-google {
+      background: #fff;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .btn-google img {
+      height: 18px;
+      width: 18px;
+    }
+
+    .btn-google:hover {
+      background: #f1f1f1;
+    }
+
+    .forgot-password {
+      text-align: right;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .forgot-password a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .alt-option {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .alt-option a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .alt-option a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 1.5rem;
+      }
+      .login-container h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <img src="../../images/Kwento-Kard-Logo.png" alt="Kwento Kard Logo">
+  </div>
+
+  <main>
+    <header>
+      <a href="../../index.html" class="home-link">
+        <h1 class="inter inter-semibold gold">Kwento Kard</h1>
+      </a>
+    </header>
+
+    <div class="login-container">
+      <h1>Create your Kard</h1>
+      <form>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+        </div>
+
+        <button type="submit" class="btn btn-gold">Sign Up</button>
+
+        <button type="button" class="btn btn-google">
+          <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google logo">
+          Sign in with Google
+        </button>
+      </form>
+
+      <div class="alt-option">
+        Already have an account? <a href="./login.html">Login</a>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="../../js/signup.js"></script>
+</body>
+</html>
