@@ -3,27 +3,26 @@ name: Deploy to Firebase Hosting
 on:
   push:
     branches:
-      - main  # or "master" if that’s your default branch
+      - main
 
 jobs:
-  build_and_deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the repo
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      # 2. Set up Node
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '18'
 
-      # 3. Install Firebase CLI
-      - name: Install Firebase CLI
-        run: npm install -g firebase-tools
+      - name: Install dependencies
+        run: npm install
 
-      # 4. Deploy to Firebase
+      - name: Build project
+        run: npm run build
+
       - name: Deploy to Firebase Hosting
-        run: firebase deploy --only hosting --token "${{ secrets.FIREBASE_TOKEN }}"
+        run: firebase deploy --only hosting --project kwentokard --token ${{ secrets.FIREBASE_TOKEN }}
