@@ -26,4 +26,4 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: |
           echo "$FIREBASE_SERVICE_ACCOUNT" > "${HOME}/firebase-key.json"
-          firebase deploy --project <YOUR_PROJECT_ID> --token "$(firebase login:ci --no-localhost)"
+          firebase deploy --project kwentokard --token "$(firebase login:ci --no-localhost)"
